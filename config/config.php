@@ -1,15 +1,8 @@
 <?php
-require __DIR__ . '/vendor/autoload.php';
-
-use Dotenv\Dotenv;
-
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-define('DB_HOST', 'localhost');
-define('DB_USER', 'kev');
-define('DB_PASSWORD', 'Kevenss2006$');
-define('DB_NAME', 'testonphp');
+define('DB_HOST', $_ENV['DB_HOST']);
+define('DB_USER', $_ENV['DB_USER']);
+define('DB_PASSWORD', $_ENV['DB_PASSWORD']);
+define('DB_NAME', $_ENV['DB_NAME']);
 
 $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
 $options = [
